@@ -1,0 +1,22 @@
+.amazon{
+  padding: 96px 0 94px;
+  &__heading{
+    margin-bottom: 37px;
+  }
+  &__inner{
+    @include rmin($r-md){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__text{
+    @include r($r-md){
+      margin-bottom: 24px;
+    }
+  }
+  &__bg{
+    height: 415px;
+    @include block-bg;
+  }
+}

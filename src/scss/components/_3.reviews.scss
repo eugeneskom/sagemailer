@@ -1,0 +1,35 @@
+.reviews{
+  margin-bottom: 110px;
+  @include r($r-md){
+    margin-bottom: 56px;
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    @include r($r-md){
+      flex-direction: column;
+    }
+  }
+  &__bg{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 506px;
+    @include r($r-md){
+      height: 350px;
+    }
+    @include r($r-sm){
+      height: 230px;
+    }
+  }
+  &__content{
+    p{
+      &:not(:last-child){
+        margin-bottom: 65px;
+        @include r($r-md){
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}

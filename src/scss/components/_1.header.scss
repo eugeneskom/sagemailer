@@ -1,0 +1,33 @@
+.header{
+  border-bottom: 1px solid $border;
+  padding: 20px 0 30px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  &__list{
+    display: flex;
+  }
+  &__item{
+    &:not(:last-child){
+      margin-right: 23px;
+    }
+  }
+  &__link{
+    text-transform: uppercase;
+    padding: 16px 24px;
+    border-radius: 4px;
+    @include proxiSemi;
+    &--login{
+      color: $highlight;
+      border: 1px solid $highlight;
+    }
+    &--free{
+      border: 1px solid $free-border;
+      background: linear-gradient(360deg, #F2C453 0%, #FCE3A8 100%);
+      color: $bold;
+    }
+  }
+
+}

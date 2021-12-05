@@ -1,0 +1,24 @@
+.care{
+  padding: 96px 0 30px;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-image: url('../img/content/cloud-1.png'),url('../img/content/cloud-2.png'),url('../img/content/cloud-3.png');
+    background-position: 260px 165px, 580px 660px, 325px 1160px;
+  }
+  &__heading{
+    margin-bottom: 32px;
+  }
+  &__descriptor{
+    max-width: 1086px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 47px;
+  }
+  &__card{
+    margin-bottom: 68px;
+  }
+}
