@@ -138,8 +138,27 @@ a{
 .heading{
   font-size: calc( (100vw - 328px)/(1200 - 328) * (38 - 24) + 24px);
   text-align: center;
+  line-height: 1.2;
+  @include proxiBold;
+}
+.block-title{
+  font-size: 20px;
+  line-height: 1.2;
+  color: $title;
+  @include proxiBold;
 }
 
 .primary-bg{
   background-color: $primary-bg;
+}
+@include r($r-md){
+
+}
+@include rmin($r-md){
+      
+}
+
+img{
+
+  display: block;
 }

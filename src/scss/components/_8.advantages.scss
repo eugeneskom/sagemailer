@@ -1,0 +1,65 @@
+.advantages{
+  padding: 48px 0 34px;
+  @include rmin($r-md){
+      padding: 97px 0 100px;
+  }
+
+  &__row{
+    @include rmin($r-md){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 138px 1fr;
+      column-gap: 38px;
+      // row-gap: 21px;
+      // place-items:center;
+      @include rmin($r-md){
+        &:not(:last-child){
+          margin-bottom: 48px;
+        }
+      }
+    }
+
+    &--odd{
+      @include rmin($r-md){
+        grid-template-areas: 
+        "ad-bg ad-title"
+        "ad-bg ad-text"
+        ;
+      }
+ 
+    }
+    &--even{
+      @include rmin($r-md){
+        grid-template-areas: 
+        "ad-title ad-bg"
+        "ad-text ad-bg"
+        ;
+      }
+    }
+  }
+  &__title{
+    margin-bottom: 24px;
+    grid-area: ad-title;
+    align-self: end;
+    // align-self: center;
+  }
+  &__bg{
+    grid-area: ad-bg;
+    max-height: 400px;
+    @include r($r-md){
+      margin-bottom: 24px;
+    }
+  }
+  &__img{
+
+  }
+
+  &__text{
+    grid-area: ad-text;
+    // align-self: center;
+
+    @include r($r-md){
+      margin-bottom: 48px;
+    }
+  }
+}

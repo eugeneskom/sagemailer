@@ -1,0 +1,41 @@
+.automate {
+  padding: 56px 0;
+
+  @include rmin($r-md) {
+    padding: 96px 0 94px;
+  }
+
+  &__heading {
+    margin-bottom: 37px;
+  }
+
+  &__inner {
+    @include rmin($r-md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+
+    @include r($r-md) {
+      margin-bottom: 55px;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      @include rmin($r-md) {
+        &:not(:last-child) {
+          margin-bottom: 28px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
