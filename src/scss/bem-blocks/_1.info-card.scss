@@ -1,90 +1,244 @@
 .info-card {
   width: calc((100% - 38px) / 2);
-  box-shadow: 0px 62px 80px rgba(0, 0, 0, 0.07), 0px 22px 24px rgba(0, 0, 0, 0.04), 0px 6px 4px rgba(0, 0, 0, 0.03);
-  border-radius: 4px;
-  background-color: $secondary-bg;
-  padding: 16px;
-  @include rmin($r-md){
-    padding: 33px 32px 70px;
-      
+  // box-shadow: 0px 62px 80px rgba(0, 0, 0, 0.07), 0px 22px 24px rgba(0, 0, 0, 0.04), 0px 6px 4px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07), 0px 1.12694px 3.88168px rgba(0, 0, 0, 0.035);
+
+
+
+  // &:nth-child(1),
+  // &:nth-child(4),
+  // &:nth-child(7){
+  //   z-index: 1;
+  //   position: relative;
+  //   &::before{
+  //     content:"";
+  //     position: absolute;
+  //     width: 331px;
+  //     height: 227px;
+  //     background-image: url('../img/icons/cloud.svg');
+  //     background-repeat: no-repeat;
+  //     background-size: contain;
+  //     right: -22px;
+  //     bottom: -67px;
+  //     z-index: 1;
+  //   }
+  // }
+
+  // &:nth-child(1){
+  //   &::before{
+  //     content:"";
+  //     width: 331px;
+  //     height: 227px;
+  //     right: -22px;
+  //     bottom: -67px;
+  //     z-index: 1;
+  //   }
+  // }
+  // &:nth-child(4){
+  //   &::before{
+  //     content:"";
+  //     width: 246px;
+  //     height: 168px;
+  //     left: -22px;
+  //     bottom: -71px;
+  //     z-index: 1;
+  //   }
+  // }
+  // &:nth-child(7){
+  //   &::before{
+  //     content:"";
+  //     width: 288px;
+  //     height: 196px;
+  //     right: -61px;
+  //     top: -85px;
+  //     z-index: 1;
+  //   }
+  // }
+
+  &__inner {
+    border-radius: 4px;
+    background-color: $secondary-bg;
+    position: relative;
+    z-index: 2;
+    padding: 16px;
+    height: 100%;
+
+    @include rmin($r-md) {
+      padding: 33px 32px 70px;
+
+    }
+  }
+
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--active {
+      margin-bottom: 32px;
+    }
   }
 
   &__title {
-    padding-left: 72px;
-    margin-bottom: 24px;
+    padding-left: 40px;
     color: $title;
     position: relative;
+    font-size: calc((100vw - 328px)/(1200 - 328) * (20 - 16) + 16px);
+    line-height: 1.2;
+
+    @include proxiBold;
+
+    @include rmin($r-md) {
+      padding-left: 72px;
+      margin-bottom: 24px;
+    }
 
     &:before {
       content: "";
       position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       width: 48px;
       height: 48px;
       left: 0;
       background-repeat: no-repeat;
       background-size: contain;
+
+      @include r($r-md) {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     &--generate {
       &::before {
-        background-image: url(../img/icons/generate.png);
+        background-image: url(../img/icons/generate.svg);
       }
     }
 
     &--enhance {
       &::before {
-        background-image: url(../img/icons/enhance.png);
+        background-image: url(../img/icons/enhance.svg);
       }
     }
 
     &--spot {
       &::before {
-        background-image: url(../img/icons/opportunities.png);
+        background-image: url(../img/icons/opportunities.svg);
       }
     }
 
     &--improve {
       &::before {
-        background-image: url(../img/icons/improve.png);
+        background-image: url(../img/icons/improve.svg);
       }
     }
 
     &--measure {
       &::before {
-        background-image: url(../img/icons/measure.png);
+        background-image: url(../img/icons/measure.svg);
       }
     }
 
     &--help {
       &::before {
-        background-image: url(../img/icons/help.png);
+        background-image: url(../img/icons/help.svg);
       }
     }
 
     &--boost {
       &::before {
-        background-image: url(../img/icons/boost.png);
+        background-image: url(../img/icons/boost.svg);
       }
     }
 
     &--awareness {
       &::before {
-        background-image: url(../img/icons/aware.png);
+        background-image: url(../img/icons/aware.svg);
       }
     }
+
     &--dislike {
       &::before {
-        background-image: url(../img/icons/dislike.png);
+        background-image: url(../img/icons/dislike.svg);
       }
     }
+
     &--trash {
       &::before {
-        background-image: url(../img/icons/trash.png);
+        background-image: url(../img/icons/trash.svg);
       }
     }
+
     &--listing {
       &::before {
-        background-image: url(../img/icons/listing.png);
+        background-image: url(../img/icons/listing.svg);
+      }
+    }
+
+    &--negative-smile {
+      &::before {
+        background-image: url(../img/icons/negative-smile.svg);
+      }
+    }
+  }
+
+
+
+  &__cross {
+    @include rmin($r-md) {
+      display: none;
+    }
+
+    position: relative;
+    display: block;
+    margin-left: 24px;
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $title;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+
+    &::before {
+      width: 24px;
+      height: 3px;
+      right: 0;
+    }
+
+    &::after {
+      height: 24px;
+      width: 3px;
+      right: 11px;
+    }
+
+    &--active {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__text {
+    transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+    font-size: calc((100vw - 328px)/(1200 - 328) * (18 - 14) + 14px);
+
+    @include r($r-md) {
+      max-height: 0px;
+      overflow: hidden;
+    }
+
+    &--active {
+      @include r($r-md) {
+        padding-top: 32px;
+        max-height: 500px;
       }
     }
   }

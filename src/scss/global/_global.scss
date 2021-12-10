@@ -103,11 +103,17 @@ a{
 .btn{
   border-radius: 4px;
   text-transform: uppercase;
-  padding: 16px 24px;
+  padding: 15px 24px;
   border: 1px solid $free-border;
   background: linear-gradient(360deg, #F2C453 0%, #FCE3A8 100%);
   color: $bold;
+  transition: all 0.3s ease-in-out;
+
   @include proxiSemi;
+  &:hover{
+    background: linear-gradient(to top,#efb528 0%,#fad67d 100%);
+  }
+
 }
 
 .title{

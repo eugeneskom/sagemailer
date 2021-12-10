@@ -42,5 +42,8 @@
     "require-dir": "^1.2.0",
     "vinyl-ftp": "^0.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-form-styler": "^2.0.2"
+  }
 }

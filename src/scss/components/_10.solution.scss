@@ -1,0 +1,34 @@
+.solution {
+  padding: 40px 0 32px;
+  @include rmin($r-md) {
+    padding: 94px 0 227px;
+  }
+
+  &__heading {
+    margin-bottom: 57px;
+  }
+
+  &__inner {
+    @include rmin($r-md) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &__card{
+    @include r($r-md){
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    @include rmin($r-md) {
+      margin-bottom: 68px;
+    }
+  }
+
+  &__img-mob{
+    @include r($r-md){
+      display: none;
+    }
+  }
+
+}

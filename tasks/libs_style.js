@@ -1,4 +1,7 @@
-const plugins = [];
+const plugins = [
+  "node_modules/jquery-form-styler/dist/jquery.formstyler.css"
+
+];
 
 const {
 	src,

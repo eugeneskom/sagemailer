@@ -1,64 +1,88 @@
-.advantages{
+.advantages {
   padding: 48px 0 34px;
-  @include rmin($r-md){
-      padding: 97px 0 100px;
+
+  @include rmin($r-md) {
+    padding: 97px 0 100px;
   }
 
-  &__row{
-    @include rmin($r-md){
-      display: grid;
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      "ad-title"
+      "ad-bg"
+      "ad-text"
+    ;
+    &:not(:last-child) {
+      @include r($r-md) {
+        margin-bottom: 48px;
+      }
+
+      @include rmin($r-md) {
+        margin-bottom: 57px;
+      }
+    }
+
+    @include rmin($r-md) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 138px 1fr;
       column-gap: 38px;
-      // row-gap: 21px;
-      // place-items:center;
-      @include rmin($r-md){
-        &:not(:last-child){
-          margin-bottom: 48px;
-        }
-      }
     }
 
-    &--odd{
-      @include rmin($r-md){
-        grid-template-areas: 
-        "ad-bg ad-title"
-        "ad-bg ad-text"
+
+    &--odd {
+      @include rmin($r-md) {
+        grid-template-areas:
+          "ad-bg ad-title"
+          "ad-bg ad-text"
         ;
       }
- 
+
     }
-    &--even{
-      @include rmin($r-md){
-        grid-template-areas: 
-        "ad-title ad-bg"
-        "ad-text ad-bg"
+
+    &--even {
+      @include rmin($r-md) {
+        grid-template-areas:
+          "ad-title ad-bg"
+          "ad-text ad-bg"
         ;
       }
     }
   }
-  &__title{
+
+  &__title {
     margin-bottom: 24px;
     grid-area: ad-title;
     align-self: end;
+
     // align-self: center;
-  }
-  &__bg{
-    grid-area: ad-bg;
-    max-height: 400px;
-    @include r($r-md){
-      margin-bottom: 24px;
+    @include r($r-md) {
+      text-align: center;
     }
   }
-  &__img{
 
+  &__bg {
+    grid-area: ad-bg;
+    max-height: 400px;
+
+    @include r($r-md) {
+      margin-bottom: 24px;
+      display: flex;
+
+    }
   }
 
-  &__text{
-    grid-area: ad-text;
-    // align-self: center;
+  &__img {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
 
-    @include r($r-md){
+  &__text {
+    grid-area: ad-text;
+
+    @include r($r-md) {
       margin-bottom: 48px;
     }
   }
